@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Thomas Pucci`,
-    description: `I am a Web and Mobile Dev, and this is my blog.`,
+    title: `pucci.xyz`,
+    description: `Hi, I'm Thomas. I post my thoughts and bookmarks #mobileAppDevelopment #code #management`,
     author: `@Thomas_Pucci`,
   },
   plugins: [
@@ -18,13 +18,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `thomas-pucci-blog`,
-        short_name: `tpucci`,
+        name: `pucci.xyz`,
+        short_name: `pucci`,
         start_url: `/`,
         background_color: `#FFFFFF`,
         theme_color: `#FFFFFF`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`,
+        icon: `src/images/favicon.png`,
       },
     },
     {
