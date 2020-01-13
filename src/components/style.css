@@ -8,6 +8,19 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+html,
+body {
+  height: 100%;
+}
+#___gatsby,
+#gatsby-focus-wrapper {
+  flex: 1;
+}
+div,
+body {
+  display: flex;
+  flex-direction: column;
+}
 article,
 aside,
 details,

@@ -34,5 +34,6 @@ module.exports = {
         allExtensions: true,
       },
     },
+    `gatsby-plugin-styled-components`,
   ],
 }
