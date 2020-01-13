@@ -13,7 +13,7 @@ export default function HTML(props) {
         />
         {props.headComponents}
       </head>
-      <body {...props.bodyAttributes}>
+      <body {...props.bodyAttributes} className="light">
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -22,6 +22,7 @@ export default function HTML(props) {
                 function setTheme(newTheme) {
                   window.__theme = newTheme;
                   preferredTheme = newTheme;
+                  document.body.className = newTheme;
                   window.__onThemeChange(newTheme);
                 }
                 var preferredTheme;

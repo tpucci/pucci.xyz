@@ -8,6 +8,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+body.light {
+  background-color: white;
+}
+body.dark {
+  background-color: #222222;
+}
 html,
 body {
   height: 100%;

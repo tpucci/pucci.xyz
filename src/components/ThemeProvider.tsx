@@ -9,6 +9,7 @@ import {
   ThemeProvider as StyledThemeProvider,
   ThemeContext,
 } from "styled-components"
+import { Helmet } from "react-helmet"
 
 interface Props {
   children: ReactChildren
@@ -53,6 +54,15 @@ export function ThemeProvider(props: Props) {
     <StyledThemeProvider
       theme={{ ...theme, darkMode: darkMode === "dark", toggleDarkMode }}
     >
+      <Helmet
+        meta={[
+          {
+            name: "theme-color",
+            content:
+              darkMode === "dark" ? theme.color.blackDark : theme.color.primary,
+          },
+        ]}
+      />
       {props.children}
     </StyledThemeProvider>
   )
