@@ -56,9 +56,13 @@ const Container = styled.div(
   ({ theme }) => css`
     flex: 1;
     align-items: center;
-    background-color: ${theme.darkMode
-      ? theme.color.blackDark
-      : theme.color.white};
+    ${!theme.darkModeLoading
+      ? css`
+          background-color: ${theme.darkMode
+            ? theme.color.blackDark
+            : theme.color.white};
+        `
+      : ""}
     transition: background-color 0.25s ease-in-out;
   `
 )

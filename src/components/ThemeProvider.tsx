@@ -33,6 +33,7 @@ const theme = {
 type Theme = typeof theme & {
   darkMode: Boolean
   toggleDarkMode: Function<void>
+  darkModeLoading: Boolean
 }
 
 export function useTheme(): Theme {
@@ -52,7 +53,12 @@ export function ThemeProvider(props: Props) {
   }, [])
   return (
     <StyledThemeProvider
-      theme={{ ...theme, darkMode: darkMode === "dark", toggleDarkMode }}
+      theme={{
+        ...theme,
+        darkModeLoading: darkMode === null,
+        darkMode: darkMode === "dark",
+        toggleDarkMode,
+      }}
     >
       <Helmet
         meta={[

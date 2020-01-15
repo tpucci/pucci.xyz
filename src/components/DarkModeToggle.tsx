@@ -5,8 +5,8 @@ import { Moon } from "../atoms/Moon"
 import { Sun } from "../atoms/Sun"
 
 export function DarkModeToggle() {
-  const { darkMode, toggleDarkMode } = useTheme()
-  if (darkMode === undefined) return null
+  const { darkMode, toggleDarkMode, darkModeLoading } = useTheme()
+  if (darkModeLoading) return null
   return (
     <Toggle
       EnableIcon={Sun}
