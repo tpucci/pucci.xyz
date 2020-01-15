@@ -1,23 +1,33 @@
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import React from "react"
+import { DarkModeToggle } from "./DarkModeToggle"
+import styled from "styled-components"
+import { BlogTitle } from "../atoms/Text"
 
-interface Props {
-  siteTitle: String[]
+export function Header() {
+  const data = useStaticQuery(graphql`
+    query SiteTitleQuery {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `)
+
+  return (
+    <Container>
+      <Link to="/">
+        <BlogTitle>{data.site.siteMetadata.title}</BlogTitle>
+      </Link>
+      <DarkModeToggle />
+    </Container>
+  )
 }
 
-const Header = ({ siteTitle }: Props) => (
-  <header
-    style={{
-      height: 64,
-      display: "flex",
-    }}
-  >
-    <Link to="/">{siteTitle}</Link>
-  </header>
-)
-
-Header.defaultProps = {
-  siteTitle: "",
-}
-
-export default Header
+const Container = styled.header`
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: ${({ theme }) => theme.grid * 5}px;
+`

@@ -2,7 +2,7 @@ import React, { ReactChildren } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./Header"
+import { Header } from "./Header"
 import "./style.css"
 import { DarkModeToggle } from "./DarkModeToggle"
 import styled, { css } from "styled-components"
@@ -12,26 +12,15 @@ interface Props {
 }
 
 export function Layout({ children }: Props) {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
     <Container>
       <div
         style={{
           flex: 1,
-          maxWidth: 900,
+          maxWidth: 700,
         }}
       >
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <DarkModeToggle />
+        <Header />
         <div
           style={{
             margin: `0 auto`,
@@ -41,11 +30,7 @@ export function Layout({ children }: Props) {
           }}
         >
           <main>{children}</main>
-          <footer>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer>
+          <footer>© {new Date().getFullYear()}, Thomas Pucci</footer>
         </div>
       </div>
     </Container>
@@ -54,8 +39,9 @@ export function Layout({ children }: Props) {
 
 const Container = styled.div(
   ({ theme }) => css`
+    flex-direction: row;
     flex: 1;
-    align-items: center;
+    justify-content: center;
     ${!theme.darkModeLoading
       ? css`
           background-color: ${theme.darkMode
@@ -64,5 +50,6 @@ const Container = styled.div(
         `
       : ""}
     transition: background-color 0.25s ease-in-out;
+    padding: 0 ${theme.grid * 4}px ${theme.grid * 4}px ${theme.grid * 4}px;
   `
 )

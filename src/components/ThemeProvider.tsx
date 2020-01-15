@@ -8,6 +8,7 @@ import React, {
 import {
   ThemeProvider as StyledThemeProvider,
   ThemeContext,
+  css,
 } from "styled-components"
 import { Helmet } from "react-helmet"
 
@@ -26,6 +27,17 @@ const theme = {
   font: {
     size: {
       caption: 13,
+    },
+    css: {
+      blogTitle: css`
+        font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI,
+          Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+          Helvetica Neue, sans-serif;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 24px;
+        text-rendering: optimizeLegibility;
+      `,
     },
   },
 }
