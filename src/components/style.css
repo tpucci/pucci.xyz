@@ -9,7 +9,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 body.light {
-  background-color: white;
+  background-color: #f3f3f3;
   color: black;
 }
 body.dark {
@@ -24,6 +24,7 @@ body {
 #gatsby-focus-wrapper {
   flex: 1;
 }
+aside,
 div,
 header,
 body {
@@ -32,7 +33,6 @@ body {
   align-items: stretch;
 }
 article,
-aside,
 details,
 figcaption,
 figure,

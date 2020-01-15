@@ -14,28 +14,19 @@ interface Props {
 export function Layout({ children }: Props) {
   return (
     <Container>
-      <div
-        style={{
-          flex: 1,
-          maxWidth: 700,
-        }}
-      >
+      <Column>
         <Header />
-        <div
-          style={{
-            margin: `0 auto`,
-            maxWidth: 960,
-            padding: `0px 1.0875rem 1.45rem`,
-            paddingTop: 0,
-          }}
-        >
-          <main>{children}</main>
-          <footer>© {new Date().getFullYear()}, Thomas Pucci</footer>
-        </div>
-      </div>
+        <div>{children}</div>
+        <footer>© {new Date().getFullYear()}, Thomas Pucci</footer>
+      </Column>
     </Container>
   )
 }
+
+const Column = styled.div`
+  flex: 1;
+  max-width: 700px;
+`
 
 const Container = styled.div(
   ({ theme }) => css`
@@ -46,7 +37,7 @@ const Container = styled.div(
       ? css`
           background-color: ${theme.darkMode
             ? theme.color.blackDark
-            : theme.color.white};
+            : theme.color.grayLight};
         `
       : ""}
     transition: background-color 0.25s ease-in-out;
