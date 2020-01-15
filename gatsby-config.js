@@ -37,5 +37,20 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-catch-links`,
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Roboto Slab`,
+            variants: [`400`],
+          },
+          {
+            family: `Open Sans`,
+            variants: [`300`, `700`],
+          },
+        ],
+      },
+    },
   ],
 }
