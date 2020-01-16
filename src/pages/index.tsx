@@ -6,8 +6,6 @@ import Image, { BioImage } from "../atoms/BioImage"
 import SEO from "../components/Seo"
 import styled from "styled-components"
 
-const IMAGE_SIZE = 370
-
 const IndexPage = () => (
   <Page>
     <SEO title="Home" />
@@ -24,12 +22,7 @@ const IndexPage = () => (
           #management
         </BioParagraph>
       </BioDescription>
-      <BioImage
-        style={{
-          width: IMAGE_SIZE,
-          height: IMAGE_SIZE,
-        }}
-      />
+      <BioImage />
     </Aside>
   </Page>
 )
@@ -55,6 +48,7 @@ const BioTitle = styled.h1`
   font-weight: 400;
   font-size: 36px;
   text-rendering: optimizeLegibility;
+  margin-top: ${({ theme }) => theme.grid}px;
 
   & > span {
     color: ${({ theme }) => theme.color.primary};
