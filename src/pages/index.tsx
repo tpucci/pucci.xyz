@@ -4,7 +4,8 @@ import { Link } from "gatsby"
 import { Page } from "../components/Page"
 import Image, { BioImage } from "../atoms/BioImage"
 import SEO from "../components/Seo"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
+import { BioTitle, BioParagraph } from "../atoms/Text"
 
 const IndexPage = () => (
   <Page>
@@ -22,7 +23,10 @@ const IndexPage = () => (
           #management
         </BioParagraph>
       </BioDescription>
-      <BioImage />
+      <BioImageContainer>
+        <BioImage />
+        <div className="BioImageProtection" />
+      </BioImageContainer>
     </Aside>
   </Page>
 )
@@ -42,41 +46,21 @@ const BioDescription = styled.div`
   }
 `
 
-const BioTitle = styled.h1`
-  font-family: Roboto Slab;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 36px;
-  text-rendering: optimizeLegibility;
-  margin-top: ${({ theme }) => theme.grid}px;
-
-  & > span {
-    color: ${({ theme }) => theme.color.primary};
+const BioImageContainer = styled.div(({ theme }) => {
+  const bgColor = theme.darkMode ? theme.color.blackDark : theme.color.grayLight
+  return css`
     position: relative;
-    z-index: 0;
+    justify-content: center;
 
-    &::after {
-      content: "";
-      display: block;
-      height: ${({ theme }) => theme.grid * 2}px;
-      background-color: ${({ theme }) =>
-        theme.darkMode ? theme.color.black : theme.color.white};
-      transition: background-color 0.25s ease-in-out;
+    & > .BioImageProtection {
       position: absolute;
-      width: 100%;
+      top: 0;
+      right: 0;
       bottom: 0;
-      left: 15px;
-      z-index: -1;
+      left: 0;
+      background: linear-gradient(to right, ${bgColor}44, ${bgColor}00 20%);
     }
-  }
-`
-
-const BioParagraph = styled.p`
-  font-family: Roboto Slab;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 24px;
-  text-rendering: optimizeLegibility;
-`
+  `
+})
 
 export default IndexPage

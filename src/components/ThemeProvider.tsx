@@ -30,17 +30,6 @@ const theme = {
     size: {
       caption: 13,
     },
-    css: {
-      blogTitle: css`
-        font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI,
-          Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
-          Helvetica Neue, sans-serif;
-        font-style: normal;
-        font-weight: 300;
-        font-size: 24px;
-        text-rendering: optimizeLegibility;
-      `,
-    },
   },
 }
 

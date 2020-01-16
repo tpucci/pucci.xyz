@@ -41,6 +41,6 @@ const Container = styled.div(
         `
       : ""}
     transition: background-color 0.25s ease-in-out;
-    padding: 0 ${theme.grid * 4}px ${theme.grid * 4}px ${theme.grid * 4}px;
+    padding: 0 ${theme.grid * 2}px ${theme.grid * 2}px ${theme.grid * 2}px;
   `
 )
