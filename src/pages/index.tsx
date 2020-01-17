@@ -58,7 +58,15 @@ const BioImageContainer = styled.div(({ theme }) => {
       right: 0;
       bottom: 0;
       left: 0;
-      background: linear-gradient(to right, ${bgColor}44, ${bgColor}00 20%);
+
+      &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        padding-top: 100%;
+        margin: auto 0;
+        background: linear-gradient(to right, ${bgColor}44, ${bgColor}00 20%);
+      }
     }
   `
 })
