@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import { Header } from "./Header"
+import { Footer } from "./Footer"
 import "./style.css"
 import { DarkModeToggle } from "./DarkModeToggle"
 import styled, { css } from "styled-components"
@@ -15,9 +16,11 @@ export function Layout({ children }: Props) {
   return (
     <Container>
       <Column>
-        <Header />
-        <div>{children}</div>
-        <footer>© {new Date().getFullYear()}, Thomas Pucci</footer>
+        <div>
+          <Header />
+          <div>{children}</div>
+        </div>
+        <Footer />
       </Column>
     </Container>
   )
@@ -26,6 +29,7 @@ export function Layout({ children }: Props) {
 const Column = styled.div`
   flex: 1;
   max-width: 700px;
+  justify-content: space-evenly;
 `
 
 const Container = styled.div(

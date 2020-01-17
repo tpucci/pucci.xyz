@@ -29,10 +29,10 @@ export const BioTitle = styled.h1`
   font-family: Roboto Slab;
   font-style: normal;
   font-weight: 400;
-  font-size: 36px;
   ${responsiveFontSize(36, 30, 24)}
   text-rendering: optimizeLegibility;
-
+  line-height: 150%;
+  margin-bottom: ${({ theme }) => theme.grid}px;
   margin-top: ${({ theme }) => theme.grid}px;
 
   & > span {
@@ -60,7 +60,21 @@ export const BioParagraph = styled.p`
   font-family: Roboto Slab;
   font-style: normal;
   font-weight: 400;
-  font-size: 24px;
   ${responsiveFontSize(24, 20, 14)}
   text-rendering: optimizeLegibility;
+  line-height: 150%;
+`
+
+export const FooterNote = styled.p`
+  font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  ${responsiveFontSize(16, 14, 12)}
+  text-rendering: optimizeLegibility;
+
+  & > a {
+    color: ${({ theme }) => theme.color.primary};
+    text-decoration: underline;
+  }
 `
