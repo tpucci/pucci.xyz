@@ -45,7 +45,11 @@ export const BioTitle = styled.h1`
       display: block;
       height: ${({ theme }) => theme.grid * 2}px;
       background-color: ${({ theme }) =>
-        theme.darkMode ? theme.color.black : theme.color.white};
+        theme.darkModeLoading
+          ? "transparent"
+          : theme.darkMode
+          ? theme.color.black
+          : theme.color.white};
       transition: background-color 0.25s ease-in-out;
       position: absolute;
       width: 100%;
@@ -77,4 +81,30 @@ export const FooterNote = styled.p`
     color: ${({ theme }) => theme.color.primary};
     text-decoration: underline;
   }
+`
+
+export const ArticleTitle = styled.h3`
+  font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  ${responsiveFontSize(24, 20, 14)}
+  line-height: 33px;
+  color: ${({ theme }) => theme.color.primary};
+`
+
+export const ArticleMetadata = styled.small`
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: 400;
+  ${responsiveFontSize(12, 12, 10)}
+  text-rendering: optimizeLegibility;
+`
+
+export const ArticleSpoiler = styled.p`
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: 400;
+  ${responsiveFontSize(14, 14, 12)}
+  text-rendering: optimizeLegibility;
 `

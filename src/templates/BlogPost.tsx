@@ -10,24 +10,7 @@ import { BioTitle, BioParagraph } from "../atoms/Text"
 const IndexPage = () => (
   <Page>
     <SEO title="Home" />
-    <Aside>
-      <BioDescription>
-        <BioTitle>
-          Hi, I'm <span>Thomas</span>
-        </BioTitle>
-        <BioParagraph>
-          I post my thoughts and bookmarks
-          <br />
-          #mobileAppDevelopment #code
-          <br />
-          #management
-        </BioParagraph>
-      </BioDescription>
-      <BioImageContainer>
-        <BioImage />
-        <div className="BioImageProtection" />
-      </BioImageContainer>
-    </Aside>
+    <div>test</div>
   </Page>
 )
 
