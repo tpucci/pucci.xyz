@@ -4,7 +4,11 @@ import { DarkModeToggle } from "./DarkModeToggle"
 import styled from "styled-components"
 import { BlogTitle } from "../atoms/Text"
 
-export function Header() {
+interface Props {
+  indexPage?: Boolean
+}
+
+export function Header(props: Props) {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -18,7 +22,9 @@ export function Header() {
   return (
     <Container>
       <Link to="/">
-        <BlogTitle>{data.site.siteMetadata.title}</BlogTitle>
+        <BlogTitle indexPage={props.indexPage}>
+          {data.site.siteMetadata.title}
+        </BlogTitle>
       </Link>
       <DarkModeToggle />
     </Container>

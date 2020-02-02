@@ -2,7 +2,7 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 
 import { Page } from "../components/Page"
-import Image, { BioImage } from "../atoms/BioImage"
+import { BioImage } from "../atoms/BioImage"
 import SEO from "../components/Seo"
 import styled, { css } from "styled-components"
 import get from "lodash/get"
@@ -73,7 +73,7 @@ const IndexPage = (props: Props) => {
   const langKey = props.pageContext.langKey
   const posts = get(props, "data.allMarkdownRemark.edges")
   return (
-    <Page>
+    <Page indexPage>
       <SEO title="Home" />
       <Aside>
         <BioDescription>

@@ -1,15 +1,16 @@
-import React, { ReactChildren } from "react"
+import React from "react"
 import { ThemeProvider } from "./ThemeProvider"
 import { Layout } from "./Layout"
 
 interface Props {
-  children: ReactChildren
+  children: any
+  indexPage?: boolean
 }
 
 export function Page(props: Props) {
   return (
     <ThemeProvider>
-      <Layout>{props.children}</Layout>
+      <Layout indexPage={props.indexPage}>{props.children}</Layout>
     </ThemeProvider>
   )
 }

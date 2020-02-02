@@ -20,9 +20,11 @@ export const BlogTitle = styled.h1`
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-style: normal;
   font-weight: 300;
-  ${responsiveFontSize(24, 20, 14)}
+  ${responsiveFontSize(24, 20, 18)}
   text-rendering: optimizeLegibility;
   margin-bottom: 0;
+  color: ${({ indexPage, theme }) =>
+    indexPage ? "inherit" : theme.color.primary};
 `
 
 export const BioTitle = styled.h1`
@@ -60,11 +62,55 @@ export const BioTitle = styled.h1`
   }
 `
 
+export const MiniBioTitle = styled.h3`
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: 400;
+  ${responsiveFontSize(22, 20, 18)}
+  text-rendering: optimizeLegibility;
+  line-height: 150%;
+  margin-bottom: ${({ theme }) => theme.grid}px;
+  margin-top: 0;
+
+  & > span {
+    color: ${({ theme }) => theme.color.primary};
+    position: relative;
+    z-index: 0;
+
+    &::after {
+      content: "";
+      display: block;
+      height: ${({ theme }) => theme.grid * 2}px;
+      background-color: ${({ theme }) =>
+        theme.darkModeLoading
+          ? "transparent"
+          : theme.darkMode
+          ? theme.color.black
+          : theme.color.white};
+      transition: background-color 0.25s ease-in-out;
+      position: absolute;
+      width: 100%;
+      bottom: -3px;
+      left: 5px;
+      z-index: -1;
+    }
+  }
+`
+
 export const BioParagraph = styled.p`
   font-family: Roboto Slab;
   font-style: normal;
   font-weight: 400;
-  ${responsiveFontSize(24, 20, 14)}
+  ${responsiveFontSize(24, 20, 16)}
+  text-rendering: optimizeLegibility;
+  line-height: 150%;
+`
+
+export const MiniBioParagraph = styled.p`
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: 400;
+  ${responsiveFontSize(20, 18, 16)}
   text-rendering: optimizeLegibility;
   line-height: 150%;
 `
@@ -88,8 +134,9 @@ export const ArticleTitle = styled.h3`
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-style: normal;
   font-weight: 700;
-  ${responsiveFontSize(24, 20, 14)}
-  line-height: 33px;
+  ${responsiveFontSize(24, 20, 18)}
+  line-height: 150%;
+  padding-bottom: 10px;
   color: ${({ theme }) => theme.color.primary};
 `
 
@@ -97,7 +144,9 @@ export const ArticleMetadata = styled.small`
   font-family: Roboto Slab;
   font-style: normal;
   font-weight: 400;
-  ${responsiveFontSize(12, 12, 10)}
+  ${responsiveFontSize(20, 18, 16)}
+  padding-bottom: 5px;
+  line-height: 150%;
   text-rendering: optimizeLegibility;
 `
 
@@ -105,6 +154,6 @@ export const ArticleSpoiler = styled.p`
   font-family: Roboto Slab;
   font-style: normal;
   font-weight: 400;
-  ${responsiveFontSize(14, 14, 12)}
+  ${responsiveFontSize(22, 20, 18)}
   text-rendering: optimizeLegibility;
 `

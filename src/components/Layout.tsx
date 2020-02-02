@@ -10,15 +10,16 @@ import styled, { css } from "styled-components"
 
 interface Props {
   children: ReactChildren
+  indexPage?: Boolean
 }
 
-export function Layout({ children }: Props) {
+export function Layout(props: Props) {
   return (
     <Container>
       <Column>
         <div>
-          <Header />
-          <div>{children}</div>
+          <Header indexPage={props.indexPage} />
+          <div>{props.children}</div>
         </div>
         <Footer />
       </Column>
@@ -27,7 +28,8 @@ export function Layout({ children }: Props) {
 }
 
 const Column = styled.div`
-  flex: 1;
+  margin: 0 auto;
+  height: 100%;
   max-width: 700px;
   justify-content: space-evenly;
 `
@@ -36,7 +38,8 @@ const Container = styled.div(
   ({ theme }) => css`
     flex-direction: row;
     flex: 1;
-    justify-content: center;
+    overflow: auto;
+    display: block;
     ${!theme.darkModeLoading
       ? css`
           background-color: ${theme.darkMode

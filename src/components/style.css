@@ -67,6 +67,11 @@ a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
+article :not(h3) > a,
+nav a {
+  color: #ffa900;
+  text-decoration: underline;
+}
 a:active,
 a:hover {
   outline-width: 0;
@@ -224,7 +229,7 @@ html {
 }
 body {
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: Open Sans, georgia, serif;
+  font-family: Roboto Slab, georgia, serif;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -427,7 +432,7 @@ pre {
   margin-bottom: 1.45rem;
   font-size: 0.85rem;
   line-height: 1.42;
-  background: hsla(0, 0%, 0%, 0.04);
+  background: hsla(0, 0%, 0%, 0.08);
   border-radius: 3px;
   overflow: auto;
   word-wrap: normal;
@@ -509,6 +514,9 @@ hr {
   background: hsla(0, 0%, 0%, 0.2);
   border: none;
   height: 1px;
+}
+body.dark hr {
+  background: hsla(0, 0%, 100%, 0.2);
 }
 address {
   margin-left: 0;
@@ -643,4 +651,87 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+}
+
+/**
+ * CODE
+ **/
+
+.gatsby-highlight {
+  margin: 0 -20px;
+}
+@media only screen and (max-width: 740px) {
+  pre {
+    border-radius: 0;
+  }
+}
+
+pre[class*="language-"]
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  border-radius: 0.3em;
+  padding: 0.15em 0.2em 0.05em;
+  white-space: normal;
+}
+
+.token.attr-name {
+  color: rgb(173, 219, 103);
+  font-style: italic;
+}
+
+.token.comment {
+  color: rgb(128, 147, 147);
+}
+
+.token.string,
+.token.url {
+  color: rgb(173, 219, 103);
+}
+
+.token.variable {
+  color: rgb(214, 222, 235);
+}
+
+.token.number {
+  color: rgb(247, 140, 108);
+}
+
+.token.builtin,
+.token.char,
+.token.constant,
+.token.function {
+  color: rgb(130, 170, 255);
+}
+
+.token.punctuation {
+  color: rgb(199, 146, 234);
+}
+
+.token.selector,
+.token.doctype {
+  color: rgb(199, 146, 234);
+  font-style: "italic";
+}
+
+.token.class-name {
+  color: rgb(255, 203, 139);
+}
+
+.token.tag,
+.token.operator,
+.token.keyword {
+  color: #ffa7c4;
+}
+
+.token.boolean {
+  color: rgb(255, 88, 116);
+}
+
+.token.property {
+  color: rgb(128, 203, 196);
+}
+
+.token.namespace {
+  color: rgb(178, 204, 214);
 }
