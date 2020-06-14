@@ -85,7 +85,7 @@ const IndexPage = (props: Props) => {
             <br />
             #mobileAppDevelopment #code
             <br />
-            #management
+            #dev
           </BioParagraph>
         </BioDescription>
         <BioImageContainer>
