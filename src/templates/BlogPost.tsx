@@ -11,7 +11,7 @@ import { Translations } from "../atoms/Translations"
 import { BioImage } from "../atoms/BioImage"
 
 const GITHUB_USERNAME = "tpucci"
-const GITHUB_REPO_NAME = "pucci.xyz"
+const GITHUB_REPO_NAME = "thomaspucci.com"
 
 export const query = graphql`
   query BlogPostBySlug($slug: String!) {
@@ -76,7 +76,7 @@ const IndexPage = (props: any) => {
     enSlug.length - 1
   )}/index${lang === "en" ? "" : "." + lang}.md`
   const discussUrl = `https://mobile.twitter.com/search?q=${encodeURIComponent(
-    `https://pucci.xyz${enSlug}`
+    `https://thomaspucci.com${enSlug}`
   )}`
   return (
     <Page>
@@ -84,9 +84,9 @@ const IndexPage = (props: any) => {
       <main>
         <article>
           <header>
-            <h1 style={{ color: "var(--textTitle)" }}>
+            <UnderlinedTitle>
               {post.frontmatter.title}
-            </h1>
+            </UnderlinedTitle>
             <p>
               {formatPostDate(post.frontmatter.date, lang)}
               {` - ${formatReadingTime(post.timeToRead)}`}
@@ -118,7 +118,7 @@ const IndexPage = (props: any) => {
         <hr></hr>
         <Bio>
           <MiniBioImageContainer>
-            <BioImage />
+            <BioImage style={{borderRadius: "50%"}} />
           </MiniBioImageContainer>
           <BioDescription>
             <MiniBioTitle>
@@ -176,6 +176,31 @@ const BioDescription = styled.div`
   padding-left: ${({ theme }) => theme.grid * 2}px;
   flex: 3;
   justify-content: center;
+`
+
+const UnderlinedTitle = styled.h1`
+  align-self: flex-start;
+  color: ${({ theme }) => theme.color.primary};
+  position: relative;
+  z-index: 0;
+
+  &::after {
+    content: "";
+    display: block;
+    height: ${({ theme }) => theme.grid * 2}px;
+    background-color: ${({ theme }) =>
+      theme.darkModeLoading
+        ? "transparent"
+        : theme.darkMode
+        ? theme.color.black
+        : theme.color.white};
+    transition: background-color 0.25s ease-in-out;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 15px;
+    z-index: -1;
+  }
 `
 
 export default IndexPage

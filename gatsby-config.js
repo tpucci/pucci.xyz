@@ -5,6 +5,7 @@ module.exports = {
     author: `@Thomas_Pucci`,
   },
   plugins: [
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
@@ -31,7 +32,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `pucci.xyz`,
+        name: `thomaspucci.com`,
         short_name: `pucci`,
         start_url: `/`,
         background_color: `#FFFFFF`,
@@ -54,7 +55,7 @@ module.exports = {
       resolve: `gatsby-plugin-web-font-loader`,
       options: {
         google: {
-          families: ["Open Sans:300,700", "Roboto Slab:400"],
+          families: ["Roboto Slab: 400", "Fira Code: 500"],
         },
       },
     },

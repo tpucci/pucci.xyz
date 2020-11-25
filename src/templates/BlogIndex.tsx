@@ -89,7 +89,7 @@ const IndexPage = (props: Props) => {
           </BioParagraph>
         </BioDescription>
         <BioImageContainer>
-          <BioImage />
+          <BioImage style={{borderRadius: "50%"}}/>
         </BioImageContainer>
       </Aside>
       <main>
@@ -129,21 +129,16 @@ const Article = styled.article`
 
 const Aside = styled.aside`
   flex-direction: row;
-  & > div {
-    flex: 1;
-  }
 `
 
 const BioDescription = styled.div`
+  flex: 2;
   justify-content: center;
-  & > p {
-    margin-right: -50px;
-    z-index: 1;
-  }
 `
 
 const BioImageContainer = styled.div(({ theme }) => {
   return css`
+    flex: 1;
     position: relative;
     justify-content: center;
   `

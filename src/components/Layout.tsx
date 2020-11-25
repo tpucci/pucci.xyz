@@ -5,6 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { Header } from "./Header"
 import { Footer } from "./Footer"
 import "./style.css"
+import "./prism.scss"
 import { DarkModeToggle } from "./DarkModeToggle"
 import styled, { css } from "styled-components"
 

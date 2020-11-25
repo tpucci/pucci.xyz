@@ -16,15 +16,13 @@ const responsiveFontSize = (
 `
 
 export const BlogTitle = styled.h1`
-  font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Roboto Slab;
   font-style: normal;
   font-weight: 300;
   ${responsiveFontSize(24, 20, 18)}
   text-rendering: optimizeLegibility;
   margin-bottom: 0;
-  color: ${({ indexPage, theme }) =>
-    indexPage ? "inherit" : theme.color.primary};
+  color: "inherit";
 `
 
 export const BioTitle = styled.h1`
@@ -116,8 +114,7 @@ export const MiniBioParagraph = styled.p`
 `
 
 export const FooterNote = styled.p`
-  font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Roboto Slab;
   font-style: normal;
   font-weight: 300;
   ${responsiveFontSize(16, 14, 12)}
@@ -130,8 +127,7 @@ export const FooterNote = styled.p`
 `
 
 export const ArticleTitle = styled.h3`
-  font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Roboto Slab;
   font-style: normal;
   font-weight: 700;
   ${responsiveFontSize(24, 20, 18)}

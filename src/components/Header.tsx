@@ -22,8 +22,8 @@ export function Header(props: Props) {
   return (
     <Container>
       <Link to="/">
-        <BlogTitle indexPage={props.indexPage}>
-          {data.site.siteMetadata.title}
+        <BlogTitle>
+          {props.indexPage ? data.site.siteMetadata.title : "🏡"}
         </BlogTitle>
       </Link>
       <DarkModeToggle />
