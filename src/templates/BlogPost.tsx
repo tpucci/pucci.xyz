@@ -125,7 +125,7 @@ const IndexPage = (props: any) => {
               Hi, I'm <span>Thomas</span>
             </MiniBioTitle>
             <MiniBioParagraph>
-              I post my thoughts and bookmarks.
+              👋 You are in my digital garden 🌳.
             </MiniBioParagraph>
           </BioDescription>
         </Bio>

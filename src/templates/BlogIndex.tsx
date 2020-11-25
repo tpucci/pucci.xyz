@@ -81,7 +81,7 @@ const IndexPage = (props: Props) => {
             Hi, I'm <span>Thomas</span>
           </BioTitle>
           <BioParagraph>
-            I post my thoughts and bookmarks
+            👋 You are in my digital garden 🌳
             <br />
             #mobileAppDevelopment #code
             <br />
@@ -90,7 +90,6 @@ const IndexPage = (props: Props) => {
         </BioDescription>
         <BioImageContainer>
           <BioImage />
-          <div className="BioImageProtection" />
         </BioImageContainer>
       </Aside>
       <main>
@@ -144,27 +143,9 @@ const BioDescription = styled.div`
 `
 
 const BioImageContainer = styled.div(({ theme }) => {
-  const bgColor = theme.darkMode ? theme.color.blackDark : theme.color.grayLight
   return css`
     position: relative;
     justify-content: center;
-
-    & > .BioImageProtection {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-
-      &::after {
-        content: "";
-        display: block;
-        width: 100%;
-        padding-top: 100%;
-        margin: auto 0;
-        background: linear-gradient(to right, ${bgColor}44, ${bgColor}00 20%);
-      }
-    }
   `
 })
 

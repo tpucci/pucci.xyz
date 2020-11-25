@@ -1,10 +1,16 @@
 module.exports = {
   siteMetadata: {
-    title: `pucci.xyz`,
-    description: `Hi, I'm Thomas. I post my thoughts and bookmarks #mobileAppDevelopment #code #dev`,
+    title: `thomaspucci.com`,
+    description: `Hi, I'm Thomas. 👋 You are in my digital garden 🌳 #mobileAppDevelopment #code #dev`,
     author: `@Thomas_Pucci`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://thomaspucci.com`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
