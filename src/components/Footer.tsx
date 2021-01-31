@@ -5,15 +5,15 @@ export function Footer() {
   return (
     <footer>
       <FooterNote>
-        <a href="https://twitter.com/Thomas_Pucci" target="_blank">
+        <a href="https://twitter.com/Thomas_Pucci" target="_blank" rel="noopener noreferrer">
           twitter
         </a>
         {" - "}
-        <a href="https://github.com/tpucci" target="_blank">
+        <a href="https://github.com/tpucci" target="_blank" rel="noopener noreferrer">
           github
         </a>
         {" - "}
-        <a href="https://fr.linkedin.com/in/thomaspucci" target="_blank">
+        <a href="https://fr.linkedin.com/in/thomaspucci" target="_blank" rel="noopener noreferrer">
           linkedin
         </a>
       </FooterNote>

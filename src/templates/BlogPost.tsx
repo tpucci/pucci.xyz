@@ -87,6 +87,7 @@ const IndexPage = (props: any) => {
             <UnderlinedTitle>
               {post.frontmatter.title}
             </UnderlinedTitle>
+            <p>{post.frontmatter.spoiler}</p>
             <p>
               Last updated: {formatPostDate(post.frontmatter.date, lang)}
               {` - ${formatReadingTime(post.timeToRead)}`}
