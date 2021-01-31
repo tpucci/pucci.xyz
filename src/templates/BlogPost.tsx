@@ -88,7 +88,7 @@ const IndexPage = (props: any) => {
               {post.frontmatter.title}
             </UnderlinedTitle>
             <p>
-              {formatPostDate(post.frontmatter.date, lang)}
+              Last updated: {formatPostDate(post.frontmatter.date, lang)}
               {` - ${formatReadingTime(post.timeToRead)}`}
             </p>
             {translations.length > 0 && (

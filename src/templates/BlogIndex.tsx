@@ -82,10 +82,6 @@ const IndexPage = (props: Props) => {
           </BioTitle>
           <BioParagraph>
             👋 You are in my digital garden 🌳
-            <br />
-            #mobileAppDevelopment #code
-            <br />
-            #dev
           </BioParagraph>
         </BioDescription>
         <BioImageContainer>
@@ -104,8 +100,7 @@ const IndexPage = (props: Props) => {
                   </Link>
                 </ArticleTitle>
                 <ArticleMetadata>
-                  {formatPostDate(node.frontmatter.date, langKey)}
-                  {` - ${formatReadingTime(node.timeToRead)}`}
+                  {formatReadingTime(node.timeToRead)}
                 </ArticleMetadata>
               </header>
               <ArticleSpoiler>{node.frontmatter.spoiler}</ArticleSpoiler>
