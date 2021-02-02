@@ -617,12 +617,9 @@ td:last-child {
 tt,
 code {
   background-color: hsla(0, 0%, 0%, 0.04);
-  border-radius: 3px;
   font-family: "SFMono-Regular", Consolas, "Roboto Mono", "Droid Sans Mono",
     "Liberation Mono", Menlo, Courier, monospace;
-  padding: 0;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
+  padding: 0.2em !important;
 }
 pre code {
   background: none;
@@ -658,4 +655,42 @@ pre tt:after {
   pre {
     border-radius: 0;
   }
+}
+
+/**
+ * SVG
+ **/
+
+article > svg {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1.45rem;
+}
+
+body.dark article > svg {
+  color: white;
+}
+
+body.light article > svg {
+  color: black;
+}
+
+.anchor {
+  margin-left: 0.5rem;
+}
+
+* > .anchor {
+  visibility: hidden;
+}
+
+*:hover > .anchor {
+  visibility: visible;
+}
+
+body.dark .anchor > svg {
+  color: white;
+}
+
+body.light .anchor > svg {
+  color: black;
 }

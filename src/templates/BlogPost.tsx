@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import { Page } from "../components/Page"
 import SEO from "../components/Seo"
@@ -21,62 +22,34 @@ export const query = graphql`
         author
       }
     }
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    mdx(slug: { eq: $slug }) {
       id
-      html
       timeToRead
+      body
+      slug
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
         spoiler
       }
-      fields {
-        slug
-        langKey
-      }
     }
   }
 `
 
-const IndexPage = (props: any) => {
-  const post = props.data.markdownRemark
-  const lang = post.fields.langKey
+const PostPage = (props: any) => {
+  const post = props.data.mdx
   let {
     previous,
     next,
     slug,
-    translations,
-    translatedLinks,
   } = props.pageContext
 
-  // Replace original links with translated when available.
-  let html = post.html
-  translatedLinks.forEach((link: any) => {
-    // jeez
-    function escapeRegExp(str: string) {
-      return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
-    }
-    let translatedLink = "/" + lang + link
-    html = html.replace(
-      new RegExp('"' + escapeRegExp(link) + '"', "g"),
-      '"' + translatedLink + '"'
-    )
-  })
-
-  translations = translations.slice()
-  translations.sort((a: string, b: string) => {
-    return codeToLanguage(a) < codeToLanguage(b) ? -1 : 1
-  })
-
-  // TODO: this curried function is annoying
-  const languageLink = createLanguageLink(slug, lang)
-  const enSlug = languageLink("en")
-  const editUrl = `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO_NAME}/edit/master/src/pages/${enSlug.slice(
+  const editUrl = `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO_NAME}/edit/master/src/pages/${slug.slice(
     1,
-    enSlug.length - 1
-  )}/index${lang === "en" ? "" : "." + lang}.md`
+    slug.length - 1
+  )}/index.md`
   const discussUrl = `https://mobile.twitter.com/search?q=${encodeURIComponent(
-    `https://thomaspucci.com${enSlug}`
+    `https://thomaspucci.com${slug}`
   )}`
   return (
     <Page>
@@ -89,19 +62,11 @@ const IndexPage = (props: any) => {
             </UnderlinedTitle>
             <p>{post.frontmatter.spoiler}</p>
             <p>
-              Last updated: {formatPostDate(post.frontmatter.date, lang)}
+              Last updated: {formatPostDate(post.frontmatter.date, undefined)}
               {` - ${formatReadingTime(post.timeToRead)}`}
             </p>
-            {translations.length > 0 && (
-              <Translations
-                translations={translations}
-                editUrl={editUrl}
-                languageLink={languageLink}
-                lang={lang}
-              />
-            )}
           </header>
-          <div dangerouslySetInnerHTML={{ __html: html }} />
+          <MDXRenderer>{post.body}</MDXRenderer>
           <footer>
             <p>
               <a href={discussUrl} target="_blank" rel="noopener noreferrer">
@@ -143,14 +108,14 @@ const IndexPage = (props: any) => {
           >
             <li>
               {previous && (
-                <Link to={previous.fields.slug} rel="prev">
+                <Link to={previous.slug} rel="prev">
                   ← {previous.frontmatter.title}
                 </Link>
               )}
             </li>
             <li>
               {next && (
-                <Link to={next.fields.slug} rel="next">
+                <Link to={next.slug} rel="next">
                   {next.frontmatter.title} →
                 </Link>
               )}
@@ -204,4 +169,4 @@ const UnderlinedTitle = styled.h1`
   }
 `
 
-export default IndexPage
+export default PostPage

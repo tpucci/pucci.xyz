@@ -17,17 +17,11 @@ import { string } from "prop-types"
 import { formatPostDate, formatReadingTime } from "../helpers/formatters"
 
 interface Props {
-  pageContext: {
-    langKey: string
-  }
   data: {
-    allMarkdownRemark: {
+    allMdx: {
       edges: Array<{
         node: {
-          fields: {
-            slug: string
-            langKey: string
-          }
+          slug: string
           frontmatter: {
             date: string
             title: string
@@ -40,23 +34,19 @@ interface Props {
 }
 
 export const query = graphql`
-  query($langKey: String!) {
+  query {
     site {
       siteMetadata {
         title
         description
       }
     }
-    allMarkdownRemark(
-      filter: { fields: { langKey: { eq: $langKey } } }
+    allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
         node {
-          fields {
-            slug
-            langKey
-          }
+          slug
           timeToRead
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
@@ -70,8 +60,7 @@ export const query = graphql`
 `
 
 const IndexPage = (props: Props) => {
-  const langKey = props.pageContext.langKey
-  const posts = get(props, "data.allMarkdownRemark.edges")
+  const posts = get(props, "data.allMdx.edges")
   return (
     <Page indexPage>
       <SEO title="Home" />
@@ -90,12 +79,12 @@ const IndexPage = (props: Props) => {
       </Aside>
       <main>
         {posts.map(({ node }) => {
-          const title = get(node, "frontmatter.title") || node.fields.slug
+          const title = get(node, "frontmatter.title") || node.slug
           return (
-            <Article key={node.fields.slug}>
+            <Article key={node.slug}>
               <header>
                 <ArticleTitle>
-                  <Link to={node.fields.slug} rel="bookmark">
+                  <Link to={node.slug} rel="bookmark">
                     {title}
                   </Link>
                 </ArticleTitle>

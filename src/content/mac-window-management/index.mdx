@@ -1,0 +1,98 @@
+---
+title: Mac Window management with Amethyst
+date: "2021-01-31"
+spoiler: Controlling my mac window positions and tiling.
+---
+
+Having clean Spaces on my mac increases my productivity. Indeed, I am pleased to see all my windows well organized on my screen:
+
+- no information hides in some app that is behind another;
+- I focus on what windows are important to my task;
+
+Looking for a window on another screen or another Space is a waste.
+
+# Organize your Spaces
+
+A Space is a virtual desktop on mac.
+
+## Use 5 Spaces (at most)
+
+I use 5 Spaces on my mac:
+
+- 1st: my chats - whatsapp, slack, teams
+- 2nd: internet browser - chrome
+- 3rd: my IDE
+- 4th: debugging tools
+- 5th: my other Space for more debugging
+
+Why ?
+
+- Manage stuff, organize, plan, collaborate: I switch between the 1st and 2nd Spaces.
+- Code: I switch between internet (browsing docs and GitHub) and my IDE.
+- Debug: I switch between 3rd and 4th or 5th Space.
+
+Each Space is next to a relevant neighbor.
+
+import LetSPairProgram from "./assets/let-s-pair-program.svg"
+
+<LetSPairProgram />
+
+## Stop your mac from rearranging Spaces
+
+On a mac, as you might know, you can use virtual Spaces. Spaces reorganize when you switch to some application. Magically. The most recent app's Space goes next to the previous one.
+To disable this horrible default setting, either:
+
+- open your settings > mission control > untick Automatically rearrange Spaces based on most recent use;
+- run the following command in a terminal.
+
+```bash
+defaults write com.apple.dock mru-desktops -bool false
+```
+
+## Do NOT use fullscreen mode
+
+Clicking on the green button on a window makes it fullscreen. Fullscreen lets you focus on one window only. Perhaps two if you use Side-by-side views. However, this has two cons:
+
+- setting fullscreen side-by-side view is time-consuming;
+- it moves the fullscreen Space at the right end of the Spaces, breaking your organization.
+
+# Organize your windows with Amethyst
+
+Amethyst is [available on Github](https://github.com/ianyh/Amethyst).
+
+## Why Ametyst and not Spectacle or other window manager ?
+
+Amethyst is the quickest way to bring the layout I have in mind to life.
+
+Spectacle or other window manager offer window positionning.
+Amethyst offers window layout.
+
+Spectacle is like positioning all HTML divs in absolute mode.
+Amethyst is like tiling elements in flex mode.
+
+## How to use Amethyst ?
+
+You just need 5 shortcuts to become a window ninja.
+
+- A window has two states: float or tile.
+  - Toggle float for focused window with `option+shit+t`
+- A Space can have several layouts but you only need two:
+  - Select tall layout with `option+shit+a`
+  - Select fullscreen layout with `option+shit+d`
+- The tall layout has a main pane that can be resized:
+  - Expand the main pane with `option+shift+l`
+  - Decrease the main pane with `option+shift+h`
+
+# Homework
+
+Thats's the theory ! Are you ready to manage your mac windows like a Pro ?
+
+1. Disable Spaces autoarrange in your settings.
+2. Create 5 Spaces and stick to it !
+3. Sort your windows on those Spaces :
+   - chats on the 1st Space,
+   - browsers on the 2nd,
+   - code on the 3rd,
+   - everything that helps you check and debug your code results on the 4th and 5th.
+4. Install [Amethyst](https://github.com/ianyh/Amethyst).
+5. Play with the 5 commands above 🎉
