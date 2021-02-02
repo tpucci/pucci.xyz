@@ -101,5 +101,29 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: "gatsby-plugin-firebase",
+      options: {
+        features: {
+          auth: false,
+          database: false,
+          firestore: false,
+          storage: false,
+          messaging: false,
+          functions: false,
+          performance: true,
+          analytics: true,
+        },
+        credentials: {
+          apiKey: "AIzaSyDqc7i8ftBXK6pViNJPuAawQJy-TWcO6n8",
+          authDomain: "thomaspucci-com.firebaseapp.com",
+          projectId: "thomaspucci-com",
+          storageBucket: "thomaspucci-com.appspot.com",
+          messagingSenderId: "726955211202",
+          appId: "1:726955211202:web:bf6b5365c925e3a506fe5b",
+          measurementId: "G-QWE69V0HFJ"
+        }
+      },
+    },
   ],
 }
