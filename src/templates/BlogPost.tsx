@@ -44,12 +44,9 @@ const PostPage = (props: any) => {
     slug,
   } = props.pageContext
 
-  const editUrl = `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO_NAME}/edit/master/src/pages/${slug.slice(
-    1,
-    slug.length - 1
-  )}/index.md`
+  const editUrl = `https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO_NAME}/edit/master/src/content/${slug}index.mdx`
   const discussUrl = `https://mobile.twitter.com/search?q=${encodeURIComponent(
-    `https://thomaspucci.com${slug}`
+    `https://thomaspucci.com/${slug}`
   )}`
   return (
     <Page>
