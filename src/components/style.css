@@ -9,7 +9,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 body.light {
-  background-color: #f3f3f3;
+  background-color: #fdfdfd;
   color: black;
 }
 body.dark {
