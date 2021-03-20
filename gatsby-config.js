@@ -55,7 +55,7 @@ module.exports = {
       resolve: `gatsby-plugin-web-font-loader`,
       options: {
         google: {
-          families: ["Roboto Slab: 400", "Fira Code: 500"],
+          families: ["Inter: 400", "Fira Code: 500"],
         },
       },
     },

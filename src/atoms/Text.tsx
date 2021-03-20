@@ -16,7 +16,7 @@ const responsiveFontSize = (
 `
 
 export const BlogTitle = styled.h1`
-  font-family: Roboto Slab;
+  font-family: Inter;
   font-style: normal;
   font-weight: 300;
   ${responsiveFontSize(24, 20, 18)}
@@ -26,7 +26,7 @@ export const BlogTitle = styled.h1`
 `
 
 export const BioTitle = styled.h1`
-  font-family: Roboto Slab;
+  font-family: Inter;
   font-style: normal;
   font-weight: 400;
   ${responsiveFontSize(36, 30, 24)}
@@ -36,32 +36,29 @@ export const BioTitle = styled.h1`
   margin-top: ${({ theme }) => theme.grid}px;
 
   & > span {
-    color: ${({ theme }) => theme.color.primary};
     position: relative;
     z-index: 0;
+    font-weight: bold;
 
     &::after {
       content: "";
       display: block;
-      height: ${({ theme }) => theme.grid * 2}px;
-      background-color: ${({ theme }) =>
-        theme.darkModeLoading
-          ? "transparent"
-          : theme.darkMode
-          ? theme.color.black
-          : theme.color.white};
+      height: ${({ theme }) => theme.grid}px;
+      background-image: url(/underline.svg);
       transition: background-color 0.25s ease-in-out;
       position: absolute;
       width: 100%;
-      bottom: 0;
-      left: 15px;
+      top: 100%;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      left: 0px;
       z-index: -1;
     }
   }
 `
 
 export const MiniBioTitle = styled.h3`
-  font-family: Roboto Slab;
+  font-family: Inter;
   font-style: normal;
   font-weight: 400;
   ${responsiveFontSize(22, 20, 18)}
@@ -71,32 +68,29 @@ export const MiniBioTitle = styled.h3`
   margin-top: 0;
 
   & > span {
-    color: ${({ theme }) => theme.color.primary};
+    font-weight: bold;
     position: relative;
     z-index: 0;
 
     &::after {
       content: "";
       display: block;
-      height: ${({ theme }) => theme.grid * 2}px;
-      background-color: ${({ theme }) =>
-        theme.darkModeLoading
-          ? "transparent"
-          : theme.darkMode
-          ? theme.color.black
-          : theme.color.white};
+      height: ${({ theme }) => theme.grid}px;
+      background-image: url(/underline.svg);
       transition: background-color 0.25s ease-in-out;
       position: absolute;
       width: 100%;
-      bottom: -3px;
-      left: 5px;
+      top: 100%;
+      left: 0px;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
       z-index: -1;
     }
   }
 `
 
 export const BioParagraph = styled.p`
-  font-family: Roboto Slab;
+  font-family: Inter;
   font-style: normal;
   font-weight: 400;
   ${responsiveFontSize(24, 20, 16)}
@@ -105,7 +99,7 @@ export const BioParagraph = styled.p`
 `
 
 export const MiniBioParagraph = styled.p`
-  font-family: Roboto Slab;
+  font-family: Inter;
   font-style: normal;
   font-weight: 400;
   ${responsiveFontSize(20, 18, 16)}
@@ -114,7 +108,7 @@ export const MiniBioParagraph = styled.p`
 `
 
 export const FooterNote = styled.p`
-  font-family: Roboto Slab;
+  font-family: Inter;
   font-style: normal;
   font-weight: 300;
   ${responsiveFontSize(16, 14, 12)}
@@ -127,7 +121,7 @@ export const FooterNote = styled.p`
 `
 
 export const ArticleTitle = styled.h3`
-  font-family: Roboto Slab;
+  font-family: Inter;
   font-style: normal;
   font-weight: 700;
   ${responsiveFontSize(24, 20, 18)}
@@ -137,7 +131,7 @@ export const ArticleTitle = styled.h3`
 `
 
 export const ArticleMetadata = styled.small`
-  font-family: Roboto Slab;
+  font-family: Inter;
   font-style: normal;
   font-weight: 400;
   ${responsiveFontSize(20, 18, 16)}
@@ -147,7 +141,7 @@ export const ArticleMetadata = styled.small`
 `
 
 export const ArticleSpoiler = styled.p`
-  font-family: Roboto Slab;
+  font-family: Inter;
   font-style: normal;
   font-weight: 400;
   ${responsiveFontSize(22, 20, 18)}

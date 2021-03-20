@@ -7,7 +7,6 @@ import SEO from "../components/Seo"
 import styled from "styled-components"
 import { MiniBioTitle, MiniBioParagraph } from "../atoms/Text"
 import { formatPostDate, formatReadingTime } from "../helpers/formatters"
-import ConvertKitForm from 'convertkit-react'
 
 import { BioImage } from "../atoms/BioImage"
 
@@ -78,12 +77,6 @@ const PostPage = (props: any) => {
         </article>
       </main>
       <aside>
-        <hr></hr>
-          <h4>Join my Newsletter</h4>
-          <p>Subscribe to get my latest content by email.</p>
-        <ConvertKitForm formId={2021802} className="newsletter"/>
-          <p>I don't send you spam. Unsubscribe at any time.</p>
-        <hr></hr>
         <Bio>
           <MiniBioImageContainer>
             <BioImage style={{borderRadius: "50%"}} />

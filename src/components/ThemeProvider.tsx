@@ -23,7 +23,7 @@ const theme = {
     black: "#000000",
     white: "#FFFFFF",
     grayLight: "#F3F3F3",
-    primary: "#FFA900",
+    primary: "#FFCC70",
   },
   grid: 10,
   font: {
@@ -31,6 +31,14 @@ const theme = {
       caption: 13,
     },
   },
+}
+
+const darkTheme = {
+  ...theme,
+  color: {
+    ...theme.color,
+    primary: "#4158D0",
+  }
 }
 
 type Theme = typeof theme & {
@@ -54,12 +62,13 @@ export function ThemeProvider(props: Props) {
       setDarkMode(window.__theme)
     }
   }, [])
+  const isDarkMode = darkMode === "dark";
   return (
     <StyledThemeProvider
       theme={{
-        ...theme,
+        ...(isDarkMode ? theme : darkTheme),
         darkModeLoading: darkMode === null,
-        darkMode: darkMode === "dark",
+        darkMode: isDarkMode,
         toggleDarkMode,
       }}
     >
@@ -68,7 +77,7 @@ export function ThemeProvider(props: Props) {
           {
             name: "theme-color",
             content:
-              darkMode === "dark" ? theme.color.blackDark : theme.color.primary,
+              isDarkMode ? theme.color.blackDark : theme.color.primary,
           },
         ]}
       />
