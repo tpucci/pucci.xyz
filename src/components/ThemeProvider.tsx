@@ -22,7 +22,6 @@ const theme = {
     blackDark: "#222222",
     black: "#000000",
     white: "#FFFFFF",
-    grayLight: "#F3F3F3",
     primary: "#FFCC70",
   },
   grid: 10,

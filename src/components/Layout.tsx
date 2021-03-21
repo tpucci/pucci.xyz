@@ -45,7 +45,7 @@ const Container = styled.div(
       ? css`
           background-color: ${theme.darkMode
             ? theme.color.blackDark
-            : theme.color.grayLight};
+            : theme.color.white};
         `
       : ""}
     transition: background-color 0.25s ease-in-out;

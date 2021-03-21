@@ -16,7 +16,6 @@ const responsiveFontSize = (
 `
 
 export const BlogTitle = styled.h1`
-  font-family: Inter;
   font-style: normal;
   font-weight: 300;
   ${responsiveFontSize(24, 20, 18)}
@@ -26,7 +25,6 @@ export const BlogTitle = styled.h1`
 `
 
 export const BioTitle = styled.h1`
-  font-family: Inter;
   font-style: normal;
   font-weight: 400;
   ${responsiveFontSize(36, 30, 24)}
@@ -58,7 +56,6 @@ export const BioTitle = styled.h1`
 `
 
 export const MiniBioTitle = styled.h3`
-  font-family: Inter;
   font-style: normal;
   font-weight: 400;
   ${responsiveFontSize(22, 20, 18)}
@@ -90,7 +87,6 @@ export const MiniBioTitle = styled.h3`
 `
 
 export const BioParagraph = styled.p`
-  font-family: Inter;
   font-style: normal;
   font-weight: 400;
   ${responsiveFontSize(24, 20, 16)}
@@ -99,7 +95,6 @@ export const BioParagraph = styled.p`
 `
 
 export const MiniBioParagraph = styled.p`
-  font-family: Inter;
   font-style: normal;
   font-weight: 400;
   ${responsiveFontSize(20, 18, 16)}
@@ -108,30 +103,28 @@ export const MiniBioParagraph = styled.p`
 `
 
 export const FooterNote = styled.p`
-  font-family: Inter;
   font-style: normal;
   font-weight: 300;
   ${responsiveFontSize(16, 14, 12)}
   text-rendering: optimizeLegibility;
 
   & > a {
-    color: ${({ theme }) => theme.color.primary};
     text-decoration: underline;
   }
 `
 
 export const ArticleTitle = styled.h3`
-  font-family: Inter;
   font-style: normal;
   font-weight: 700;
   ${responsiveFontSize(24, 20, 18)}
   line-height: 150%;
   padding-bottom: 10px;
-  color: ${({ theme }) => theme.color.primary};
+  background: -webkit-linear-gradient(275deg,#FFCC70 -10%,#C850C0,#4158D0 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 `
 
 export const ArticleMetadata = styled.small`
-  font-family: Inter;
   font-style: normal;
   font-weight: 400;
   ${responsiveFontSize(20, 18, 16)}
@@ -141,7 +134,6 @@ export const ArticleMetadata = styled.small`
 `
 
 export const ArticleSpoiler = styled.p`
-  font-family: Inter;
   font-style: normal;
   font-weight: 400;
   ${responsiveFontSize(22, 20, 18)}

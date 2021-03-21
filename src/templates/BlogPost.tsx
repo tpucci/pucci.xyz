@@ -56,10 +56,10 @@ const PostPage = (props: any) => {
             <UnderlinedTitle>
               {post.frontmatter.title}
             </UnderlinedTitle>
-            <p>{post.frontmatter.spoiler}</p>
-            <p>
-              Last updated: {formatPostDate(post.frontmatter.date, undefined)}
-              {` - ${formatReadingTime(post.timeToRead)}`}
+            <p className="header__description">{post.frontmatter.spoiler}</p>
+            <p className="header__metadata-wrapper">
+              <span className="header__metadata">Last updated: {formatPostDate(post.frontmatter.date, undefined)}</span>
+              <span className="header__metadata">{formatReadingTime(post.timeToRead)}</span>
             </p>
           </header>
           <MDXRenderer>{post.body}</MDXRenderer>
@@ -141,26 +141,9 @@ const BioDescription = styled.div`
 
 const UnderlinedTitle = styled.h1`
   align-self: flex-start;
-  color: ${({ theme }) => theme.color.primary};
-  position: relative;
-  z-index: 0;
-
-  &::after {
-    content: "";
-    display: block;
-    height: ${({ theme }) => theme.grid * 2}px;
-    background-color: ${({ theme }) =>
-      theme.darkModeLoading
-        ? "transparent"
-        : theme.darkMode
-        ? theme.color.black
-        : theme.color.white};
-    transition: background-color 0.25s ease-in-out;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    left: 15px;
-    z-index: -1;
+  background: -webkit-linear-gradient(275deg,#FFCC70 -10%,#C850C0,#4158D0 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   }
 `
 
