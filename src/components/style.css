@@ -75,11 +75,11 @@ a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
-article :not(h1, h2, h3, h4) > a {
+article :not(h1, h2, h3, h4) > a:not(.gatsby-resp-image-link) {
   position: relative;
   font-weight: bold;
 }
-article :not(h1, h2, h3, h4) > a::after {
+article :not(h1, h2, h3, h4) > a:not(.gatsby-resp-image-link)::after {
   content: "";
   display: block;
   height: 10px;
@@ -92,7 +92,7 @@ article :not(h1, h2, h3, h4) > a::after {
   left: 0px;
 }
 article footer a::after {
-  display: none;
+  display: none !important;
 }
 article footer a {
   font-weight: bold;
