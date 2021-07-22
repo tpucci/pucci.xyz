@@ -1,0 +1,38 @@
+---
+title: SSH Key Encryption
+date: "2021-07-22"
+spoiler: Encrypt SSH keys for better security.
+---
+
+# Encrypt your keys
+
+Use the command :
+
+```
+ssh-keygen -p -f /Users/thomaspucci/.ssh/id_rsa_something
+```
+
+You will be prompt for your password.
+
+# Save your password somewhere safe
+
+I personnaly use [Bitwarden](https://bitwarden.com).
+
+# Change your .ssh/config
+
+Add `UseKeychain` to authorize the agent to store and get the key password from the keychain.
+
+```
+───────┬──────────────────────────────
+       │ File: config
+───────┼──────────────────────────────
+   1   │ Host *
+   2   │  AddKeysToAgent yes
+   3   │  UseKeychain yes
+```
+
+# Try to pull a project
+
+You will be asked for your password.
+Type it or copy-paste-it.
+It will be saved in the keychain and you will not be asked for it again.
